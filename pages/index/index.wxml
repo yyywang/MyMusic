@@ -1,13 +1,99 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<!--pages/index/index.wxml-->
+<import src='/templates/course-list/course-list-template.wxml' />
+<import src='/templates/search/search-template.wxml' />
+
+<cu-custom bgColor="bg-mauve">
+	<view slot="content">My音乐</view>
+</cu-custom>
+<!-- /////////////顶部tab -->
+<scroll-view scroll-x class="bg-mauve nav text-center">
+	<view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
+		<text class="cuIcon-radioboxfill"></text> 古典音乐
+	</view>
+	<view class="cu-item menu {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+		<text class="cuIcon-musicfill"></text> 流行音乐
+	</view>
+	<view class="cu-item menu {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+		<text class="cuIcon-voicefill"></text> 声乐
+	</view>
+</scroll-view>
+<!--//////////// 搜索框 -->
+<template is="search" data="{{onSearch, plhStr: '搜索作品/歌手'}}"></template>
+<!-- //////////每周列表 -->
+<view wx:if="{{!onSearch}}">
+	<view class="{{TabCur==0?'show':'hide'}}">
+		<block wx:for="{{weekList}}" wx:for-index='idx' wx:key="idx">
+			<view catchtap='onWeekTap' data-week='{{item.name}}' data-category='{{item.category}}'>
+				<template is='courseList' data='{{...item}}' />
+			</view>
+		</block>
+	</view>
+	<view class="{{TabCur==1?'show':'hide'}}">
+		<block wx:for="{{weekList}}" wx:for-index='idx' wx:key="idx">
+			<view catchtap='onWeekTap' data-week='{{item.name}}' data-category='{{item.category}}'>
+				<template is='courseList' data='{{...item}}' />
+			</view>
+		</block>
+	</view>
+	<view class="{{TabCur==2?'show':'hide'}}">
+		<view class="cu-card case no-card solid-bottom">
+			<view class="cu-item shadow">
+				<view class="image">
+					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+					<view class="cu-tag bg-blue">史诗</view>
+					<view class="cu-bar bg-shadeBottom">
+						<text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
+					</view>
+				</view>
+				<view class="cu-list menu-avatar">
+					<view class="cu-item">
+						<view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+						<view class="content flex-sub">
+							<view class="text-grey">正义天使 凯尔</view>
+							<view class="text-gray text-sm flex justify-between">
+								十天前
+								<view class="text-gray text-sm">
+									<text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+									<text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+									<text class="cuIcon-messagefill margin-lr-xs"></text> 30
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="cu-card case no-card solid-bottom">
+			<view class="cu-item shadow">
+				<view class="image">
+					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
+					<view class="cu-tag bg-blue">史诗</view>
+					<view class="cu-bar bg-shadeBottom">
+						<text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
+					</view>
+				</view>
+				<view class="cu-list menu-avatar">
+					<view class="cu-item">
+						<view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+						<view class="content flex-sub">
+							<view class="text-grey">正义天使 凯尔</view>
+							<view class="text-gray text-sm flex justify-between">
+								十天前
+								<view class="text-gray text-sm">
+									<text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+									<text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+									<text class="cuIcon-messagefill margin-lr-xs"></text> 30
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- ////////下拉刷新动画 -->
+<view class='load-progress {{loadProgress?"show":"hide"}}' style="top:{{CustomBar}}px;">
+	<view class='load-progress-spinner text-mauve'></view>
 </view>

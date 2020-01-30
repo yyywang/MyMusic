@@ -1,0 +1,8 @@
+<!--templates/music-item/music-item.wxml-->
+<template name="musicItem">
+    <view class="solid-bottom padding solid-top solid-bottom" catchtap='onMusicItemTap' data-idx='{{idx}}'>
+        <text class="text-Abc text-black text-bold">{{idx+1}}. {{item.title}}<text class='author'> - {{item.author}}</text></text>
+        <text class='cuIcon-videofill text-mauve icon-play' wx:if='{{item.isAudio}}'></text>
+        <text class='cuIcon-recordfill text-mauve icon-play' wx:if='{{!item.isAudio}}'></text>
+    </view>
+</template>

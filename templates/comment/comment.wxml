@@ -1,0 +1,49 @@
+<!--templates/comment/comment.wxml-->
+<template name="comment">
+    <view class="cu-item solid-bottom">
+        <!-- 头像 -->
+        <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);">
+        <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+        </view>
+        
+        <view class="content">
+            <!-- 昵称 -->
+            <view class="text-grey">莫甘娜</view>
+            <!-- 评论内容 -->
+            <view class="text-gray text-content text-df ">
+                好听哈哈哈好听哈哈哈好听哈哈哈好听哈哈哈好听哈哈哈好听哈哈哈
+            </view>
+            <!-- 别人回复 -->
+            <view class="bg-grey padding-sm radius text-sm margin-top-sm">
+                <view class="grid col-1 margin-bottom">
+                    <view class="text-cut">凯尔：</view>
+                    <view class="flex justify-between align-end padding-lr">
+                        <view>妹妹，你在帮他们给黑暗找借口吗?妹妹，你在帮他们给黑暗找借口吗?</view>
+                        <text class="cuIcon-appreciatefill text-white"></text>10
+                    </view>
+                </view>
+                <view class="grid col-1 margin-bottom">
+                    <view class="text-cut">瑞兹<text class="text-bold"> @ </text>凯凯尔凯尔凯尔凯尔凯尔凯尔凯尔凯尔凯尔尔：</view>
+                    <view class="flex justify-between align-end padding-lr">
+                        <view>妹妹，你在帮他们给黑暗找借口吗?妹妹，你在帮他们给黑暗找借口吗?</view>
+                        <text class="cuIcon-appreciatefill text-white"></text>10
+                    </view>
+                </view>
+                <view class="grid col-1" style="width: 100%">
+                    <button class="cu-btn bg-green sm" role="button" aria-disabled="false" style="margin: 0 auto;">查看全部</button>
+                </view>
+
+            </view>
+            <!-- 操作 -->
+            <view class="margin-top-sm flex justify-between">
+                <view class="text-gray text-df">2018/10/10</view>
+                <view class="flex justify-between basis-xs">
+                    <view>
+                        <text class="cuIcon-appreciatefill text-red"></text>100</view>
+                    <view>
+                        <text class="cuIcon-message text-gray margin-left-sm"></text>100</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

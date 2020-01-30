@@ -1,17 +1,12 @@
 //app.js
+import {Token} from './utils/token.js'
+var token = new Token();
+
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // 每次启动小程序时校验token，确保token有效
+    token.verify();
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -30,6 +25,15 @@ App({
             }
           })
         }
+      }
+    })
+    // 获取系统状态栏信息
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let custom = wx.getMenuButtonBoundingClientRect();
+        this.globalData.Custom = custom;
+        this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
     })
   },

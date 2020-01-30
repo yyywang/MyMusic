@@ -1,14 +1,63 @@
 {
     "pages": [
+        "pages/empty/empty",
+        "pages/register/register",
         "pages/index/index",
-        "pages/logs/logs"
+        "pages/communicate/communicate",
+        "pages/publish/publish",
+        "pages/news/news",
+        "pages/my/my"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
+        "navigationBarTitleText": "My音乐",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
     },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    },
+    "tabBar": {
+        "color": "#dbdbdb",
+        "selectedColor": "#9c26b0",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "课堂",
+                "iconPath": "images/icon/index.png",
+                "selectedIconPath": "images/icon/index_selected.png"
+            },
+            {
+                "pagePath": "pages/communicate/communicate",
+                "text": "交流",
+                "iconPath": "images/icon/publish.png",
+                "selectedIconPath": "images/icon/publish_selected.png"
+            },
+            {
+                "pagePath": "pages/publish/publish",
+                "text": "发布",
+                "iconPath": "images/icon/add.png",
+                "selectedIconPath": "images/icon/add_selected.png"
+            },
+            {
+                "pagePath": "pages/news/news",
+                "text": "消息",
+                "iconPath": "images/icon/news.png",
+                "selectedIconPath": "images/icon/news_selected.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "images/icon/my.png",
+                "selectedIconPath": "images/icon/my_selected.png"
+            }
+        ]
+    },
+    "requiredBackgroundModes": [
+        "audio"
+    ],
     "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

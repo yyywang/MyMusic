@@ -1,0 +1,10 @@
+/* templates/music-item/music-item.wxss */
+
+.icon-play {
+    float: right;
+}
+
+.author {
+    font-size: 24rpx;
+    font-weight: normal;
+}

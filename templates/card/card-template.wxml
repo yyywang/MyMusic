@@ -1,0 +1,31 @@
+<!--templates/publish/card/card-template.wxml-->
+<template name='card'>
+    <view class="cu-card article solid-top">
+        <view class="cu-item shadow">
+            <view class="title">
+                <view class="text-cut">
+                    {{title}}阿里云视频点播（ApsaraVideo for VoD）是集音视频采集、编辑、上传、自动化转码处理、媒体资源管理、分发加速、视频播放于一体的一站式音视频点播解决方案
+                </view>
+            </view>
+            <view class="content">
+                <image src="{{cover_url}}" mode="aspectFill"></image>
+                <view class="desc">
+                    <view class="text-content">{{content}}阿里云视频点播（ApsaraVideo for VoD）是集音视频采集、编辑、上传、自动化转码处理、媒体资源管理、分发加速、视频播放于一体的一站式音视频点播解决方案</view>
+
+                    <view class="text-gray text-sm flex justify-between align-end">
+                        <view>
+                            <text class="cuIcon-appreciatefill margin-lr-xs"></text> 11{{appreciate_num}}
+                            <text class="cuIcon-messagefill margin-lr-xs"></text> 11{{comment_num}}
+                        </view>
+                        <view>
+                            <view class="cu-tag bg-pink light sm round">
+                                {{grade}}
+                            </view>
+                                {{author}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

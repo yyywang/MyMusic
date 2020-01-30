@@ -1,0 +1,4 @@
+/* templates/video/video-template.wxss */
+#myVideo {
+    width: 100%;
+}

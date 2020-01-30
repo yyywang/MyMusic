@@ -1,0 +1,61 @@
+/* pages/login/login.wxss */
+page {
+    background-image: var(--gradualPink);
+    color: var(--white)
+}
+
+.UCenter-bg {
+    background-size: cover;
+    height: 550rpx;
+    display: flex;
+    justify-content: center;
+    padding-top: 40rpx;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    width: 250rpx;
+    height: 250rpx;
+}
+
+.login-btn {
+    width: 166rpx !important;
+    line-height: 40rpx;
+    font-size: 32rpx;
+    color: white;
+    border: 2rpx solid white;
+    background-color: transparent;
+    margin-top: 200rpx;
+    font-weight: normal;
+}
+button.login-btn[disabled] {
+    opacity: 0.5;
+    background-color: #fff;
+    color: #ccc;
+}
+
+.form-container {
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    height: 1rem;
+    font-size: 35rpx;
+}
+
+.placeholder {
+    color: white;
+    font-size: 35rpx;
+}
+
+.course-picker {
+    background-color: transparent;
+    font-size: 35rpx;
+}

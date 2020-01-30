@@ -1,0 +1,13 @@
+/* templates/publish/card/card-template.wxss */
+.date {
+    margin-left: 25rpx;
+}
+
+.author {
+    margin-top: 30rpx;
+}
+
+.cu-card.article>.cu-item {
+    margin: 0 !important;
+    /* margin-bottom: 30rpx !important; */
+}
