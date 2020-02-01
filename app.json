@@ -6,7 +6,9 @@
         "pages/communicate/communicate",
         "pages/publish/publish",
         "pages/news/news",
-        "pages/my/my"
+        "pages/my/my",
+        "pages/index/a-week-course/a-week-course",
+        "pages/video-page/video-page"
     ],
     "window": {
         "backgroundTextStyle": "light",

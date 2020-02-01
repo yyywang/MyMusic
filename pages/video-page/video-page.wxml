@@ -1,0 +1,44 @@
+<!--pages/video-page/video-page.wxml-->
+<import src='/templates/comment/comment' />
+
+<cu-custom bgColor="bg-mauve" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">{{title}}</view>
+</cu-custom>
+
+<!-- <view class="video-container" style='top:{{CustomBar}}'> -->
+    <video id="myVideo" src="{{music.file_url}}" controls objectFit='contain' title='{{music.title}}'>
+    </video>
+<!-- </view> -->
+<!-- S=操作栏 -->
+<view class="text-gray padding flex flex-wrap justify-between align-center bg-white">
+    <!-- S=点赞 -->
+    <view class="flex flex-direction text-center" bindtap="onLikeTap">
+        <view>{{music.like_num}}</view>
+        <text class="{{music.has_like?'cuIcon-appreciatefill text-red':'cuIcon-appreciate'}} margin-lr-xs"></text>
+    </view>
+    <!-- E=点赞 -->
+    <!-- S=评论 -->
+    <view class="flex flex-direction text-center">
+        <view>{{music.comment_num}}</view>
+        <text class="cuIcon-message margin-lr-xs"></text>
+    </view>
+    <!-- E=评论 -->
+    <!-- S=收藏 -->
+    <view class="flex flex-direction text-center" catchtap='onFavorTap'>
+        <view>{{music.favor_num}}</view>
+        <text class="{{music.has_favor?'cuIcon-favorfill text-red':'cuIcon-favor'}} margin-lr-xs"></text>
+    </view>
+    <!-- E=收藏 -->
+    <!-- 音频播放按钮 -->
+    <button class='cu-btn bg-mauve button-hover' role='button' size="mini">音频播放</button>
+</view>
+<!-- E=操作栏 -->
+<!-- S=评论 -->
+<view class="cu-list menu-avatar comment solids-top">
+    <!-- <block wx:for='{{commentList}}' wx:key> -->
+    <template is="comment" data="{{...item}}" />
+    <template is="comment" data="{{...item}}" />
+    <!-- </block> -->
+</view>
+<!-- E=评论 -->

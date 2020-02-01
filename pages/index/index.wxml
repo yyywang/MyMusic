@@ -22,15 +22,15 @@
 <!-- //////////每周列表 -->
 <view wx:if="{{!onSearch}}">
 	<view class="{{TabCur==0?'show':'hide'}}">
-		<block wx:for="{{weekList}}" wx:for-index='idx' wx:key="idx">
-			<view catchtap='onWeekTap' data-week='{{item.name}}' data-category='{{item.category}}'>
+		<block wx:for="{{classicalList}}" wx:for-index='idx' wx:key="idx">
+			<view catchtap='onWeekTap' data-week='{{item.week}}'>
 				<template is='courseList' data='{{...item}}' />
 			</view>
 		</block>
 	</view>
 	<view class="{{TabCur==1?'show':'hide'}}">
-		<block wx:for="{{weekList}}" wx:for-index='idx' wx:key="idx">
-			<view catchtap='onWeekTap' data-week='{{item.name}}' data-category='{{item.category}}'>
+		<block wx:for="{{popList}}" wx:for-index='idx' wx:key="idx">
+			<view catchtap='onWeekTap' data-week='{{item.week}}'>
 				<template is='courseList' data='{{...item}}' />
 			</view>
 		</block>

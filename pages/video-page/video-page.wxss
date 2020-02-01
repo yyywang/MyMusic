@@ -1,0 +1,13 @@
+/* pages/video-page/video-page.wxss */
+#myVideo {
+    width: 100%;
+}
+
+.video-container {
+    /* position: fixed; */
+    width: 100%;
+}
+
+.cu-btn {
+    font-weight: normal;
+}

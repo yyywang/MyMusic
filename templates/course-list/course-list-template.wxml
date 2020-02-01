@@ -4,7 +4,7 @@
         <view class="cu-item arrow">
             <view class="content" hover-class="none">
                 <text class="cuIcon-timefill text-mauve text-lg"></text>
-                <text class="text-grey text-lg">第{{name}}周</text>
+                <text class="text-grey text-lg">第 {{week}} 周</text>
             </view>
             <!-- <view class="action">
                 <view class="cu-tag round bg-pink light">{{music.title}}</view>

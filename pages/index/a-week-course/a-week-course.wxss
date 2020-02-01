@@ -1,0 +1,9 @@
+/* pages/index/a-week-course/a-week-course.wxss */
+.icon-play {
+    float: right;
+}
+
+.author {
+    font-size: 24rpx;
+    font-weight: normal;
+}

@@ -109,9 +109,31 @@
 
 
 .hide {
-    opacity: 0;
+    display: none;
 }
 
 .show {
-    opacity: 1;
+    display: block;
+}
+
+/* 占位隐藏 */
+.hide-place {
+  opacity: 0;
+}
+
+/* 占位显示 */
+.show-place{
+  opacity: 1;
+}
+
+.hr-normal {
+  width: 80%;
+  margin: 0 auto;
+  height: 2rpx;
+}
+
+.hr-light {
+  width: 80%;
+  margin: 0 auto;
+  height: 1rpx;
 }

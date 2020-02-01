@@ -1,0 +1,39 @@
+<!--pages/index/a-week-course/a-week-course.wxml-->
+<cu-custom bgColor="bg-mauve" isBack="{{true}}"> 
+    <view slot="backText">返回</view> 
+    <view slot="content">第 {{week}} 周</view>
+</cu-custom> 
+<scroll-view scroll-x class="bg-mauve nav text-center">
+    <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
+        课内
+    </view>
+    <view class="cu-item menu {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+        课外
+    </view>
+</scroll-view>
+<!-- S=课内作品 --> 
+<view class="text-left {{TabCur==0?'show':'hide'}}">
+    <view class="padding-lr bg-white">
+        <block wx:for="{{inMusicList}}" wx:for-index='idx' wx:key='idx'>
+            <view class="solid-bottom padding" catchtap='onMusicTap' data-mid='{{item.id}}'>
+                <text class="text-Abc text-black text-cut">{{idx+1}}. {{item.title}}<text class='author'> - {{item.author}}</text></text>
+                <text class='cuIcon-videofill text-mauve icon-play' wx:if='{{item.isAudio}}'></text>
+                <text class='cuIcon-recordfill text-mauve icon-play' wx:if='{{!item.isAudio}}'></text>
+            </view>
+        </block>
+    </view>
+</view>
+<!-- E=课内作品 -->
+<!-- S=课外作品 -->
+<view class="text-left {{TabCur==1?'show':'hide'}}">
+    <view class="padding-lr bg-white">
+        <block wx:for="{{outMusicList}}" wx:for-index='idx' wx:key='idx'>
+            <view class="solid-bottom padding" catchtap='onMusicTap' data-mid='{{item.id}}'>
+                <text class="text-Abc text-black text-cut">{{idx+1}}. {{item.title}}<text class='author'> - {{item.author}}</text></text>
+                <text class='cuIcon-videofill text-mauve icon-play' wx:if='{{item.isAudio}}'></text>
+                <text class='cuIcon-recordfill text-mauve icon-play' wx:if='{{!item.isAudio}}'></text>
+            </view>
+        </block>
+    </view>
+</view>
+<!-- E=课外作品 -->

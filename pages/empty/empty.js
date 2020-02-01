@@ -18,8 +18,8 @@ Page({
      */
     onLoad: function (options) {
         // 若用户已绑定学号和姓名，不显示绑定页面，跳转至首页
-        this.verifyRegister(function (res) {
-            if (res) {
+        this.verifyRegister(function (registered) {
+            if (registered) {
                 wx.switchTab({
                     url: '/pages/index/index'
                 })
@@ -47,6 +47,7 @@ Page({
                         account: res.code,
                         type: 200
                     },
+                    type: 'post',
                     sCallback: function (res) {
                         // 本地写入已注册标识
                         var registered = false;

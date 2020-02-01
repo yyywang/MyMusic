@@ -14,15 +14,18 @@
                 好听哈哈哈好听哈哈哈好听哈哈哈好听哈哈哈好听哈哈哈好听哈哈哈
             </view>
             <!-- 别人回复 -->
-            <view class="bg-grey padding-sm radius text-sm margin-top-sm">
-                <view class="grid col-1 margin-bottom">
+            <view class="bg-grey padding-lr-sm radius text-sm margin-top-sm ">
+            <!-- 阻止 margin 塌陷 -->
+            <view style="height:1px"></view> 
+                <view class="grid col-1 margin-tb">
                     <view class="text-cut">凯尔：</view>
                     <view class="flex justify-between align-end padding-lr">
                         <view>妹妹，你在帮他们给黑暗找借口吗?妹妹，你在帮他们给黑暗找借口吗?</view>
                         <text class="cuIcon-appreciatefill text-white"></text>10
                     </view>
                 </view>
-                <view class="grid col-1 margin-bottom">
+                <view class="hr-light bg-white"></view>
+                <view class="grid col-1 margin-tb">
                     <view class="text-cut">瑞兹<text class="text-bold"> @ </text>凯凯尔凯尔凯尔凯尔凯尔凯尔凯尔凯尔凯尔尔：</view>
                     <view class="flex justify-between align-end padding-lr">
                         <view>妹妹，你在帮他们给黑暗找借口吗?妹妹，你在帮他们给黑暗找借口吗?</view>
@@ -30,7 +33,7 @@
                     </view>
                 </view>
                 <view class="grid col-1" style="width: 100%">
-                    <button class="cu-btn bg-green sm" role="button" aria-disabled="false" style="margin: 0 auto;">查看全部</button>
+                    <button class="cu-btn bg-olive line-olive sm" role="button" size="mini" aria-disabled="false" style="margin: 0 auto;">查看全部</button>
                 </view>
 
             </view>
